@@ -2,12 +2,20 @@
 import pathlib
 import requests
 from rich.progress import Progress
+import json
 
-DEFAULT_PAGE = 1
-DEFAULT_PAGE_SIZE = 10
-API_KEY_LOCATION = "~/.hevy_api_key"
+## Load Config File
+project_home = pathlib.Path(__file__).parent.resolve()
+config_file = project_home / "config.json"
+config = json.loads(config_file.read_text())
+
+## Get Variables from config
+DEFAULT_PAGE = config.get("DEFAULT_PAGE", 0)
+DEFAULT_PAGE_SIZE = config.get("DEFAULT_PAGE_SIZE", 10)
+API_KEY_LOCATION = config.get("API_KEY_LOCATION", "~/.hevy_api_key")
+
+## Other Variables 
 API_KEY_URL = "https://hevy.com/settings?developer"
-
 
 class ApiPaginator:
     def paginate(self, endpoint, params, session):
