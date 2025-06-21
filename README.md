@@ -31,3 +31,13 @@ git clone https://github.com/yourusername/hevy_api.git
 cd hevy_api
 pip install -r requirements.txt
 ```
+
+---
+
+## ▶️ Running the Program
+
+To quickly run the tool and view your workouts in a human-readable format, use the included `workout_table.py` script:
+
+```bash
+python workout_table.py
+```
