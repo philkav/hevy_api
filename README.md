@@ -36,6 +36,8 @@ pip install -r requirements.txt
 
 ## ▶️ Running the Program
 
+First, make sure you've saved your Hevy API key to `~/.hevy_api_key`
+
 To quickly run the tool and view your workouts in a human-readable format, use the included `workout_table.py` script:
 
 ```bash
